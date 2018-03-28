@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pingTestButton = new System.Windows.Forms.Button();
             this.device1Label = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.device1ReplyLabel = new System.Windows.Forms.Label();
+            this.appNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.mainFormMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +129,13 @@
             this.device1ReplyLabel.TabIndex = 6;
             this.device1ReplyLabel.Text = "Reply";
             // 
+            // appNotifyIcon
+            // 
+            this.appNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("appNotifyIcon.Icon")));
+            this.appNotifyIcon.Text = "notifyIcon1";
+            this.appNotifyIcon.Visible = true;
+            this.appNotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.appNotifyIcon_MouseDoubleClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +153,8 @@
             this.MainMenuStrip = this.mainFormMenuStrip;
             this.Name = "MainForm";
             this.Text = "Ping Status";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.mainFormMenuStrip.ResumeLayout(false);
             this.mainFormMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -164,6 +175,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label device1ReplyLabel;
+        private System.Windows.Forms.NotifyIcon appNotifyIcon;
     }
 }
 
